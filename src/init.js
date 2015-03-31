@@ -29,6 +29,7 @@ $(document).ready(function(){
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
+    dancer.step();
   });
 
   $(".lineup").on("click", function(){
@@ -38,6 +39,15 @@ $(document).ready(function(){
       window.dancers[i].lineUp(100, currentPlace);
       currentPlace+=width / window.dancers.length;
     }
+    // var bounce = new BouncyDancer(200,300,100);
+    // var circle = new CircleDancer(400,500,30);
+    // circle.setClosestBounce(bounce);
+    // bounce.step();
+    // circle.step();
+    // $('body').append(bounce.$node);
+    // $('body').append(circle.$node);
+    // setTimeout(null,2000);
+
   });
 });
 

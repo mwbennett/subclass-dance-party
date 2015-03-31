@@ -8,7 +8,7 @@ var Dancer = function(top, left, timeBetweenSteps){
   this.top = top;
   this.left = left;
   this.setPosition(top, left);
-  this.step();
+  this.pause = false;
 
 };
 
@@ -29,13 +29,22 @@ Dancer.prototype.setPosition = function(top, left){
   this.$node.css(styleSettings);
 };
 
-Dancer.prototype.lineUp = function(top, left){
+Dancer.prototype.animateToPosition = function(top, left){
   console.log('trying to lineup!');
   var styleSettings = {
     top: top,
     left: left
   };
   this.$node.animate(styleSettings);
+}
+
+Dancer.prototype.setPause = function(){
+  this.pause = !this.pause;
+}
+
+Dancer.prototype.lineUp = function(top, left){
+  this.setPause();
+  this.animateToPosition(top, left);
 }
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
