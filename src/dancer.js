@@ -30,7 +30,6 @@ Dancer.prototype.setPosition = function(top, left){
 };
 
 Dancer.prototype.animateToPosition = function(top, left){
-  console.log('trying to lineup!');
   var styleSettings = {
     top: top,
     left: left
@@ -40,6 +39,7 @@ Dancer.prototype.animateToPosition = function(top, left){
 
 Dancer.prototype.setPause = function(){
   this.pause = !this.pause;
+  this.$node.stop(true, true);
 }
 
 Dancer.prototype.lineUp = function(top, left){

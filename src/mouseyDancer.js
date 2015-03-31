@@ -11,7 +11,7 @@ MouseyDancer.prototype.react = function(){
   });
 }
 
-BouncyDancer.prototype.step = function(){
+MouseyDancer.prototype.step = function(){
   this.oldStep();
   // call the old version of step at the beginning of any call to this new version of step
   // toggle() is a jQuery method to show/hide the <span> tag.
