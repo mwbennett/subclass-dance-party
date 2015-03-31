@@ -1,6 +1,7 @@
 $(document).ready(function(){
   window.dancers = [];
   window.linedUp = false;
+  window.partneredUp = false;
 
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
@@ -47,15 +48,27 @@ $(document).ready(function(){
     }else{
       $(this).text('line up!');
     }
-    // var bounce = new BouncyDancer(200,300,100);
-    // var circle = new CircleDancer(400,500,30);
-    // circle.setClosestBounce(bounce);
-    // bounce.step();
-    // circle.step();
-    // $('body').append(bounce.$node);
-    // $('body').append(circle.$node);
-    // setTimeout(null,2000);
+  });
+
+  $(".partnerup").on("click", function(){
+    var distances = {};
+    var calcDistance = function(x, y, x0, y0){
+      return Math.sqrt((x -= x0) * x + (y -= y0) * y);
+    };
+    for(var i = 0; i < window.dancers.length / 2; i++){
+      for(var k = Math.floor(window.dancers.length / 2); k < window.dancers.length; k++){
+        _.extend(distances[window.dancers[i]], { window.dancers[k] : calcDistance(window.dancers[i].left, window.dancers[i].top, window.dancers[k].left, window.dancers[k].top)});
+      }
+    }
+    window.partneredUp = !window.partneredUp;
+    if(window.partneredUp){
+      $(this).text('back to it');
+    }else{
+      $(this).text('line up!');
+    }
 
   });
+
+
 });
 
