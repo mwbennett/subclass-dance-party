@@ -51,24 +51,22 @@ $(document).ready(function(){
   });
 
   $(".partnerup").on("click", function(){
-    var distances = {};
-    var calcDistance = function(x, y, x0, y0){
-      return Math.sqrt((x -= x0) * x + (y -= y0) * y);
-    };
-    for(var i = 0; i < window.dancers.length / 2; i++){
-      for(var k = Math.floor(window.dancers.length / 2); k < window.dancers.length; k++){
-        _.extend(distances[window.dancers[i]], { window.dancers[k] : calcDistance(window.dancers[i].left, window.dancers[i].top, window.dancers[k].left, window.dancers[k].top)});
-      }
+    for(var i = 0; i < window.dancers.length;i+=2){
+      var x = window.dancers[i].left;
+      var y = window.dancers[i].top;
+      var x2 = window.dancers[i + 1].left;
+      var y2 = window.dancers[i + 1].top;
+      var newX = (x + x2)/2;
+      var newY = (y + y2)/2;
+      window.dancers[i + 1].animateToPosition(newX , newY);
+      window.dancers[i].animateToPosition(newX + 10 , newY + 10);
     }
     window.partneredUp = !window.partneredUp;
     if(window.partneredUp){
       $(this).text('back to it');
     }else{
-      $(this).text('line up!');
+      $(this).text('partner up!');
     }
-
   });
-
-
 });
 
