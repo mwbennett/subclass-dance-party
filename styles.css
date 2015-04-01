@@ -12,24 +12,41 @@ body, a:link, a:visited, a:active{
 }
 .title, .addDancerButton, .lineup, .partnerup{
   padding:5px 12px;
-  float:right;
 }
 .topbar{
   height:32px;
   background-color: #555;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 32px;
 }
 .title{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border : none;
+  background-size: 60px 60px;
+  width : 60px;
+  height : 60px;
+  display: inline-block;
   position:absolute;
 }
 .bouncy-dancer{
-  width : 90px;
-  height : 90px;
-  z-index : 1;
-  display : block;
-  background-image : url("assets/Goofy.svg.png");
+  background-image: url("assets/Goofy.svg.png");
 }
+.circle-dancer{
+  background-image: url("assets/mickey_mouse.png");
+}
+.mousey-dancer{
+  background-image: url("assets/eeyore-sad.png");
+}
+.blinky-dancer{
+  background-image: url("assets/daffy.png");
+  background-size: 75px 75px;
+  width : 75px;
+  height : 75px;
+}
+
+
+

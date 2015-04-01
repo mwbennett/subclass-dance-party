@@ -8,7 +8,7 @@ MouseyDancer.prototype.constructor = MouseyDancer;
 
 MouseyDancer.prototype.react = function(){
   this.$node.on('mouseover', function(){
-    $(this).css('border','20px solid limegreen');
+    $(this).css('background-image','url("assets/eeyore-happy.png")');
   });
 }
 
