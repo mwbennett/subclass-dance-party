@@ -1,5 +1,6 @@
 var BouncyDancer = function (top , left ,timeBetweenSteps){
   Dancer.apply(this,arguments);
+  this.$node.addClass('bouncy-dancer');
   this.bounceDirection = 1;
   this.bounceHeight = 100;
   this.bounceCounter = 0;

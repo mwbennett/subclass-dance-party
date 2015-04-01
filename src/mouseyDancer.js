@@ -1,5 +1,6 @@
 var MouseyDancer = function(top, left, timeBetweenSteps){
   BouncyDancer.apply(this, arguments);
+  this.$node.addClass('mousey-dancer');
 }
 
 MouseyDancer.prototype = Object.create(BouncyDancer.prototype);

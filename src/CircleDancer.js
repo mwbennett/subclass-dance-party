@@ -1,5 +1,6 @@
 var CircleDancer = function(top, left, timeBetweenSteps){
   Dancer.apply(this, arguments);
+  this.$node.addClass('circle-dancer');
   this.t = 0;
   this.r = 50;
   this.timeBetweenSteps = 1;

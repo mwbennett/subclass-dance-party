@@ -2,8 +2,9 @@ body, html{
   height:100%;
 }
 body{
-  margin: 0px;
-  background-color:#444;
+  margin: 0;
+  background-image: url("assets/dance_floor.jpg");
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -24,4 +25,11 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+.bouncy-dancer{
+  width : 90px;
+  height : 90px;
+  z-index : 1;
+  display : block;
+  background-image : url("assets/Goofy.svg.png");
 }

@@ -1,5 +1,6 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps){
   Dancer.apply(this,arguments);
+  this.$node.addClass('blinky-dancer');
 
 };
 
